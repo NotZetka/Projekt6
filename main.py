@@ -19,7 +19,7 @@ def printResult(string,pattern):
     if(len(occurs)==0):
         print("Nie znaleziono patternu w tekście")
     else:
-        print("Pattern " + Fore.RED + pattern + Fore.WHITE + " występuje w tekście w miejscach:")
+        print("Pattern " + Fore.RED + pattern + Fore.LIGHTWHITE_EX + " występuje w tekście w miejscach:")
         i = 0
         occur = occurs.pop(0)
         while i<len(string):
@@ -38,7 +38,7 @@ def printResult(string,pattern):
             print(Fore.RED + string[occur:occur+len(pattern)],end='')
             print(Fore.WHITE + string[occur+len(pattern):])
         print(Fore.WHITE)
-    print("Liczba wystąpień: "+str(liczba))
+    print(Fore.LIGHTWHITE_EX+"Liczba wystąpień: "+Fore.RED+str(liczba))
 
 def validateInput(string,pattern):
     if(len(string)==0):
@@ -75,7 +75,7 @@ def readFromKeyboard():
 
 def chooseInput():
     try:
-        print(Fore.WHITE+"Żeby wczytać z klawiatury wciśnij 1, żeby wczytać z pliku wciśnij 2")
+        print(Fore.LIGHTWHITE_EX+"Żeby wczytać z klawiatury wciśnij 1, żeby wczytać z pliku wciśnij 2")
         n = int(input())
         if(n==1):
             readFromKeyboard()
